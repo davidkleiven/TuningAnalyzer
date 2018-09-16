@@ -33,6 +33,6 @@ $ZIPALIGN -f 4 bin/tuninganalyzer.unaligned.apk bin/tuninganalyzer.apk
 
 if [ "$1" == "test" ]; then
 	echo "Launching..."
-	adb install -r bin/hello.apk
-	adb shell am start -n com.example.helloandroid/.MainActivity
+	adb install -r bin/tuninganalyzer.apk
+	adb shell am start -n com.github.TuningAnalyzer/.MainActivity
 fi
