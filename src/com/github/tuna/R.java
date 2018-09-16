@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.github.TuningAnalyzer;
+package com.github.tuna;
 
 public final class R {
     public static final class attr {

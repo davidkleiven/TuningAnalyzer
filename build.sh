@@ -7,7 +7,7 @@ DX="/home/dkleiven/Documents/android_devel/build-tools/28.0.2/dx"
 ZIPALIGN="/home/dkleiven/Documents/android_devel/build-tools/28.0.2/zipalign"
 APKSIGNER="/home/dkleiven/Documents/android_devel/build-tools/28.0.2/apksigner" # /!\ version 26
 PLATFORM="/home/dkleiven/Documents/android_devel/platforms/android-24/android.jar"
-SRC_DIR="src/com/github/TuningAnalyzer"
+SRC_DIR="src/com/github/tuna"
 
 echo "Cleaning..."
 rm -rf obj/*
@@ -24,15 +24,15 @@ echo "Translating in Dalvik bytecode..."
 $DX --dex --output=classes.dex obj
 
 echo "Making APK..."
-$AAPT package -f -m -F bin/tuninganalyzer.unaligned.apk -M AndroidManifest.xml -S res -I $PLATFORM
-$AAPT add bin/tuninganalyzer.unaligned.apk classes.dex
+$AAPT package -f -m -F bin/tuna.unaligned.apk -M AndroidManifest.xml -S res -I $PLATFORM
+$AAPT add bin/tuna.unaligned.apk classes.dex
 
 echo "Aligning and signing APK..."
-$APKSIGNER sign --ks mykey.keystore bin/tuninganalyzer.unaligned.apk
-$ZIPALIGN -f 4 bin/tuninganalyzer.unaligned.apk bin/tuninganalyzer.apk
+$APKSIGNER sign --ks mykey.keystore bin/tuna.unaligned.apk
+$ZIPALIGN -f 4 bin/tuna.unaligned.apk bin/tuna.apk
 
 if [ "$1" == "test" ]; then
 	echo "Launching..."
-	adb install -r bin/tuninganalyzer.apk
-	adb shell am start -n com.github.TuningAnalyzer/.MainActivity
+	adb install -r bin/tuna.apk
+	adb shell am start -n com.github.tuna/.MainActivity
 fi

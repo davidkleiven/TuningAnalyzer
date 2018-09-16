@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
-<manifest xmlns:a='http://schemas.android.com/apk/res/android' package='com.github.TuningAnalyzer' a:versionCode='0' a:versionName='0'>
-    <application a:label='Tuning Analyzer'>
-        <activity a:name='com.github.TuningAnalyzer.MainActivity'>
+<manifest xmlns:a='http://schemas.android.com/apk/res/android' package='com.github.tuna' a:versionCode='0' a:versionName='0'>
+    <application a:label='TunA'>
+        <activity a:name='com.github.tuna.MainActivity'>
              <intent-filter>
                 <category a:name='android.intent.category.LAUNCHER'/>
                 <action a:name='android.intent.action.MAIN'/>

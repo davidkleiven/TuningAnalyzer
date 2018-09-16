@@ -1,4 +1,4 @@
-package com.github.TuningAnalyzer;
+package com.github.tuna;
 
 import android.app.Activity;
 import android.os.Bundle;
